@@ -10,7 +10,7 @@ https://github.com/exercism/xjava/blob/master/exercises/hello-world/TUTORIAL.md
 * [Submitting your first iteration](#submitting-your-first-iteration)
 * [Next Steps](#next-steps)
  * [Review (and comment on) others' submissions to this exercise](#review-and-comment-on-others-submissions-to-this-exercise)
- * [Extend an exercise](#extend-an-exercise)
+ * [Extend an exercise](extend-an-exercise)
 
 ----
 
