@@ -22,6 +22,7 @@ public class TestIt {
 
 		try{
 		Class cls = Class.forName(clsName);
+		System.out.println("default print");
 		Object obj = cls.newInstance();
 		for(String mName:mNames){
 		Method m = cls.getDeclaredMethod(mName,noParams);
