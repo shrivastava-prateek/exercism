@@ -1,13 +1,40 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Anagram {
 
+	private String inputWord;
+	private char[] inputArray;
+
 	public Anagram(String string) {
-		// TODO Auto-generated constructor stub
+		this.inputWord=string.toLowerCase();
+		this.inputArray=inputWord.toCharArray();
+		Arrays.sort(inputArray);
+
 	}
 
 	public List<String> match(List<String> asList) {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> anagrams = new ArrayList<String>();
+		for(String word:asList){
+			if(inputWord.equalsIgnoreCase(word)){
+				continue;
+			}
+			else if(checkAnagram(word)){
+				anagrams.add(word);
+			}
+
+		}
+		return anagrams;
+	}
+
+
+	public boolean checkAnagram(String word){
+
+		char[] arr = (word.toLowerCase()).toCharArray();
+
+		Arrays.sort(arr);
+
+		return Arrays.equals(arr, inputArray); 
 	}
 }
