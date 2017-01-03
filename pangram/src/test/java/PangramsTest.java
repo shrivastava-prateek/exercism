@@ -12,58 +12,58 @@ public class PangramsTest {
         assertFalse(Pangrams.isPangram(""));
     }
 
-    @Ignore
+   
     @Test
     public void pangramWithOnlyLowerCase() {
         assertTrue(Pangrams.isPangram("the quick brown fox jumps over the lazy dog"));
     }
 
-    @Ignore
+   
     @Test
     public void missingCharacterX() {
         assertFalse(Pangrams.isPangram("a quick movement of the enemy will jeopardize five gunboats"));
     }
 
-    @Ignore
+   
     @Test
     public void anotherMissingCharacterX() {
         assertFalse(Pangrams.isPangram("the quick brown fish jumps over the lazy dog"));
     }
 
-    @Ignore
+   
     @Test
     public void pangramWithUnderscores() {
         assertTrue(Pangrams.isPangram("\"the_quick_brown_fox_jumps_over_the_lazy_dog\""));
     }
 
-    @Ignore
+   
     @Test
     public void pangramWithNumbers() {
         assertTrue(Pangrams.isPangram("\"the 1 quick brown fox jumps over the 2 lazy dogs\""));
     }
 
-    @Ignore
+   
     @Test
     public void missingLettersReplacedByNumbers() {
         assertFalse(Pangrams.isPangram("\"7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog\""));
     }
 
-    @Ignore
+  
     @Test
     public void pangramWithMixedCaseAndPunctuation() {
         assertTrue(Pangrams.isPangram("\"Five quacking Zephyrs jolt my wax bed.\""));
     }
 
-    @Ignore
+  
     @Test
     public void pangramWithNonAsciiCharacters() {
-        assertTrue(Pangrams.isPangram("Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich."));
+        assertTrue(Pangrams.isPangram("Victor jagt zwÃ¶lf BoxkÃ¤mpfer quer Ã¼ber den groÃŸen Sylter Deich."));
     }
 
 
-    @Ignore
+  
     @Test
     public void panagramInAlphabetOtherThanAscii() {
-        assertFalse(Pangrams.isPangram("Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства."));
+        assertFalse(Pangrams.isPangram("Ð¨Ð¸Ñ€Ð¾ÐºÐ°Ñ� Ñ�Ð»ÐµÐºÑ‚Ñ€Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ� ÑŽÐ¶Ð½Ñ‹Ñ… Ð³ÑƒÐ±ÐµÑ€Ð½Ð¸Ð¹ Ð´Ð°Ñ�Ñ‚ Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹ Ñ‚Ð¾Ð»Ñ‡Ð¾Ðº Ð¿Ð¾Ð´ÑŠÑ‘Ð¼Ñƒ Ñ�ÐµÐ»ÑŒÑ�ÐºÐ¾Ð³Ð¾ Ñ…Ð¾Ð·Ñ�Ð¹Ñ�Ñ‚Ð²Ð°."));
     }
 }
