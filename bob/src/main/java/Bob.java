@@ -1,3 +1,4 @@
+import java.text.Normalizer;
 
 public class Bob {
 
@@ -9,12 +10,23 @@ public class Bob {
 	
 	public String hey(String string) {
 			
+		/*
+		 * Normalizing text -- removing accents
+		 */
+		string = Normalizer.normalize(string, Normalizer.Form.NFD);
+		string = string.replaceAll("[^\\p{ASCII}]", "");
+		
+
 		String temp =string.replaceAll("[^a-zA-Z]", "");
-		if(checkForForcefulness(temp)){
+		
+		
+		int len = temp.length();
+		
+		if(checkForForcefulness(temp) && len > 0){
 			return yellResponse;
 		}
 		
-		if(string.endsWith("?")){
+		else if(string.endsWith("?")){
 				return quesResponse;
 			}
 		else if(string.endsWith("!")){
@@ -35,13 +47,11 @@ public class Bob {
 			return false;
 		}
 		for(char a:arr){
-			if(!((a >= 65 && a <= 90) ||a == 32)){
+			if(!(a >= 65 && a <= 90)){
 				return false;
 			}
 		}
 		return true;
 	}
-	/*public static void main(String[] args) {
-		new Bob().hey("4?");
-	}*/
+	
 }
