@@ -17,13 +17,13 @@ public class RobotTest {
         assertIsValidName(robot.getName());
     }
 
-    @Ignore
+   
     @Test
     public void differentRobotsHaveDifferentNames() {
         assertThat(robot.getName(), not(equalTo(new Robot().getName())));
     }
 
-    @Ignore
+   
     @Test
     public void resetName() {
         final String name = robot.getName();
